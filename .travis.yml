@@ -1,0 +1,13 @@
+language: cpp
+cache: ccache
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-trusty-6.0
+      - ubuntu-toolchain-r-test # for libstdc++ 4.9 backport
+    packages:
+      - ninja-build
+      - clang-format-6.0
+      - clang-tidy-6.0
+script:
+  - hack/lint.bash
